@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      h1 {
+        font-family: sans-serif;
+        font-weight: bolder;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>Url Shortner</h1>
+
+    <form action="/url" method="post">
+      <label for="takingurl">Enter the original URL: </label>
+      <input type="text" placeholder="http://example.com" />
+      <button type="submit">Generate Link</button>
+    </form>
+
+    <ul>
+      <% urls.forEach((url) => { %>
+      <li>
+        <%= url.shortId %> | Visits: <%= url.visitHistory.length %>
+        <a href="http://localhost:8001/<%= url.shortId %>" target="_blank">
+          http://localhost:8001/<%= url.shortId %>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
