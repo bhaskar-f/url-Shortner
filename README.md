@@ -37,7 +37,7 @@ It also tracks how many times each short link has been visited.
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/bhaskar-f/url-Shortner.git
-cd url-shortner
+cd url-Shortner
 ```
 --- 
 
