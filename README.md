@@ -36,8 +36,8 @@ It also tracks how many times each short link has been visited.
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/bhaskar-f/url-shortener.git
-cd url-shortener
+git clone https://github.com/bhaskar-f/url-Shortner.git
+cd url-shortner
 ```
 --- 
 
@@ -52,7 +52,7 @@ npm install
 Create a .env file in the project root:
 ```env
 PORT=8001
-MONGO_URI=mongodb://localhost:27017/url-shortener
+MONGO_URI=mongodb://localhost:27017/url-shortner
 ```
 ---
 
@@ -81,7 +81,7 @@ Now the server will run at 👉 http://localhost:8001
 
 ## 📂 Project Structure
 ```csharp
-url-shortener/
+url-shortner/
 │
 ├── models/             # Mongoose models
 │   └── url.js
