@@ -39,10 +39,14 @@ It also tracks how many times each short link has been visited.
 git clone https://github.com/your-username/url-shortener.git
 cd url-shortener
 ```
+--- 
+
 ### 2️⃣ Install dependencies
 ```bash
 npm install
 ```
+---
+
 ### 3️⃣ Setup Environment Variables
 
 Create a .env file in the project root:
@@ -50,12 +54,16 @@ Create a .env file in the project root:
 PORT=8001
 MONGO_URI=mongodb://localhost:27017/url-shortener
 ```
+---
+
 ### 4️⃣ Run the server
 ```bash
 npm start
 ```
 
 Now the server will run at 👉 http://localhost:8001
+
+---
 
 ## 🚀 Usage
 
@@ -68,6 +76,8 @@ Now the server will run at 👉 http://localhost:8001
 - Copy and share your short URL.
 
 - Track visit counts in the dashboard table.
+
+---
 
 ## 📂 Project Structure
 ```csharp
@@ -85,6 +95,8 @@ url-shortener/
 ├── package.json
 └── README.md
 ```
+---
+
 ## 📈 Future Improvements
 
  - Add user authentication (login to manage links)
@@ -95,15 +107,21 @@ url-shortener/
 
  - Custom alias option (choose your own short ID)
 
+---
+
 ## 🤝 Contributing
 
 - Pull requests are welcome!
 - For major changes, please open an issue first to discuss what you’d like to change.
 
+---
+
 ## 📜 License
 
 - This project is licensed under the MIT License.
 - You’re free to use, modify, and distribute it.
+
+---
 
 #### 👨‍💻 Made with ❤️ by Bhaskar
 
