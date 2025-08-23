@@ -10,13 +10,11 @@ async function handleCreateShortUrl(req, res) {
     shortId: shortId,
     redirectURL: body.url,
     visitHistory: [],
+    createdBy: req.user._id,
   });
-  res.send(`
-    <h1>Short URL Generated!</h1>
-    <p>Original: ${body.url}</p>
-    <p>Short: <a href="/${shortId}" target="_blank">http://localhost:3000/${shortId}</a></p>
-    <a href="/">Go Back</a>
-  `);
+  return res.render("home", {
+    id: shortId,
+  });
 }
 
 async function handleUrlAnalytics(req, res) {

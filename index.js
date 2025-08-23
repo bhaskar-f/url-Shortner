@@ -4,11 +4,17 @@ const path = require("path");
 
 const urlRoutes = require("./routes/url");
 
+const userRoute = require("./routes/user");
+
 const staticRoute = require("./routes/staticRouter");
 
 const url = require("./models/url");
 
 const { connectToMongoDB } = require("./connection");
+
+const cookieParser = require("cookie-parser");
+
+const { restrictUserIfNotLoggedIn, checkAuth } = require("./middleware/auth");
 
 const app = express();
 
@@ -21,11 +27,12 @@ connectToMongoDB("mongodb://127.0.0.1:27017/short-url").then(() => {
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-app.use("/url", urlRoutes);
-app.use("/", staticRoute);
+app.use("/url", restrictUserIfNotLoggedIn, urlRoutes);
+app.use("/user", userRoute);
+app.use("/", checkAuth, staticRoute);
 
 app.get("/:shortId", async (req, res) => {
   const shortId = req.params.shortId;
@@ -41,6 +48,9 @@ app.get("/:shortId", async (req, res) => {
       },
     }
   );
+  if (!entry) {
+    return res.status(404).send("Short URL not found");
+  }
   res.redirect(entry.redirectURL);
 });
 

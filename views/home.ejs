@@ -172,6 +172,9 @@
       <button type="submit">Generate</button>
     </form>
 
+    <% if(locals.id) { %>
+    <p>URL Generated: http://localhost:8001<%= id %></p>
+    <% } %> <% if(locals.urls){ %>
     <table>
       <thead>
         <tr>
@@ -196,7 +199,7 @@
         <% }) %>
       </tbody>
     </table>
-
+    <% } %>
     <script>
       function toggleTheme() {
         document.body.classList.toggle("dark");
